@@ -14,9 +14,7 @@ export default defineConfig(({ mode }) => {
   const isGitHubPages = mode === 'production' && !process.env.FIGMA_PUBLIC_URL
 
   return {
-    base: isGitHubPages 
-      ? '/Woroyenta/' 
-      : (process.env.FIGMA_PUBLIC_URL ? `${process.env.FIGMA_PUBLIC_URL}/` : '/'),
+    base: '/', // Força a raiz para funcionar perfeitamente na Vercel
     build: {
       sourcemap: emitSourcemaps ? 'inline' : false,
       minify: !emitSourcemaps,
